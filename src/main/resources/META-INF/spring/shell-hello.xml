@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:osgi="http://www.eclipse.org/gemini/blueprint/schema/blueprint"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.eclipse.org/gemini/blueprint/schema/blueprint http://www.eclipse.org/gemini/blueprint/schema/blueprint/gemini-blueprint.xsd">
+
+	<bean id="shellCommands" class="org.jahia.modules.sample.osgi.ShellCommands" />
+	<osgi:service id="shellCommandsService"
+		interface="org.jahia.modules.sample.osgi.ShellCommands"
+		ref="shellCommands">
+        <osgi:service-properties>
+            <entry key="osgi.command.scope">
+                <value>sample</value>
+            </entry>
+            <entry key="osgi.command.function">
+                <value>hello</value>
+            </entry>
+        </osgi:service-properties>
+    </osgi:service>
+
+</beans>
