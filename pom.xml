@@ -48,7 +48,6 @@
         <groupId>org.jahia.modules</groupId>
         <version>7.0.0.0-SNAPSHOT</version>
     </parent>
-    <groupId>org.jahia.modules</groupId>
     <artifactId>sample-osgi-module</artifactId>
     <name>Sample OSGi Module</name>
     <version>1.0-SNAPSHOT</version>    
@@ -83,6 +82,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Import-Package>!org.osgi.service.blueprint,${jahia.plugin.projectPackageImport},*</Import-Package>
                         <Jahia-Depends>default</Jahia-Depends>
                     </instructions>
                 </configuration>
